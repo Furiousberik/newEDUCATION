@@ -70,4 +70,4 @@
 // }
 // const a = zam(2)
 // console.log(a(23));
-
+//1
