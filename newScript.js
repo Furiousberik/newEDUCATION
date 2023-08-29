@@ -46,13 +46,13 @@
 // }
 
 // function carried(fn, ...args) {
-// 	return function f(...newArgs){
-// 		const allArgs = [...args, ...newArgs]
-// 		if(allArgs.length >= fn.length){
-// 			return fn(...allArgs)
+	// return function f(...newArgs){   // задаю первую функцию
+// 		const allArgs = [...args, ...newArgs]  // слияние всех аргументов один массив
+// 		if(allArgs.length >= fn.length){  // если длина переданных аргументов больше чем длина параметров, то 
+// 			return fn(...allArgs)          // срабатывает функция с этими аргументами
 // 		}
 // 		else {
-// 			return carried(fn, ...allArgs)
+// 			return carried(fn, ...allArgs)  // если меньше, то возвращаем обратно на вызов всей функции и так до тех пор пока не будет достаточного кол-ва аргументов
 // 		}	
 // 	}
 // }
@@ -60,7 +60,8 @@
 // const carriedMul = carried(car)
 
 // console.log(carriedMul(1)(2)(2));
-
+// console.log(carriedMul(1,2,3));
+// console.log(carriedMul(1,2)(3));
 // ================= Zamikanie ===================
 
 // function zam(a) {
