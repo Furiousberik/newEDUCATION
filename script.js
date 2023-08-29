@@ -1414,12 +1414,12 @@
 // function Man(name){
 // 	this.name = name
 // }
-Man.prototype.sayHello = function(){
-// !
-	console.log("Hello, " + this.name)
-}
-Man.prototype.age = 25
-const man1 = new Man("igor")
+// Man.prototype.sayHello = function(){
 
-man1.sayHello()
+// 	console.log("Hello, " + this.name)
+// }
+// Man.prototype.age = 25
+// const man1 = new Man("igor")
+
+// man1.sayHello()
 // console.log(man1.age);
