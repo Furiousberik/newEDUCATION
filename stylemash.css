@@ -1,0 +1,13 @@
+body {
+    position: relative;
+    background-color: black;
+}
+
+.img1 {
+    position: absolute;
+
+}
+
+.img2 {
+    position: absolute;
+}
