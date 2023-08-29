@@ -71,4 +71,71 @@
 // }
 // const a = zam(2)
 // console.log(a(23));
-//1
+
+
+// ============= Диструктуризация ===================
+// --- array ---
+// const arr = [1, 2, 3, 4, 5]
+// const [a, b, c] = arr
+// console.log({b,c})
+
+// const arr2 = [1, 2, 3, 4, 5]
+// const [ , , a, b, c] = arr2
+// console.log(b,c);
+
+// const arr3 = [1, 2, 3, 4, 5]
+// const [ , , , , a] = arr3
+// console.log(a);
+
+// const oba4= [1, 2, 3, 4, 5]
+// const [a, b, ...rest] = oba4
+// console.log(rest);
+
+// const oba5= [1, 2, 3, 4, 5]
+// const [a, b] = arr5
+// console.log(b);
+
+// --- object ----
+
+// const obj1 = {name: "Igor",	age: 23}
+// const {name: a, age: b} = obj1
+// console.log(a);
+
+// const obj2= {name: "Igor"}
+// const {age: b = 30} = obj2
+// console.log(b);
+
+
+// const obj3 = {name: "Igor",	age: 23, city: "Lida"}
+// const {name: a, age: b, ...rest} = obj3
+// console.log(rest);
+
+// const obj4 = {name: "Igor",	age: 23, city: "Lida", country: "Russia"}
+// const {name: userName, age: userAge, city: userCity, country: userCountry = "Belarus"} = obj4
+// console.log(userCountry);
+
+//---- SPREAD ----
+
+// const f1 = (a,b) => [...a,...b].sort((a,b)=> a-b)
+// console.log(f1([2,3,4], [4,56,7]));
+
+
+// const f2 = (a) => Math.max(...a)
+
+// console.log(f2([51,23,156, 24]));
+
+// const f3 = (...args) => args
+
+// console.log((f3(2,3,4,5)));\
+// const a = {name: "Igor", surName: "Borisenko"}
+// const b = {name: "Andrey",  age: 23}
+
+// const f4 = (a, b) => {
+// 	a.name = b.name ? b.name = a.name : b.name
+// 	return {...a, ...b}
+// }
+
+// console.log(f4(a, b));
+
+// const f5 = (a) => [...new Set(a)]
+// console.log(f5([2,2,3,4,5,3,1]));
