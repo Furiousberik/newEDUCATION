@@ -268,3 +268,65 @@
 //   { name: "Masha", followers: 16435 },
 //   { name: "Kasha", followers: 5003 }
 // ]
+
+//================= try catch finally ===================
+
+// function sum(a,b) {
+// 	if(typeof a === "string" || typeof b === "string"){
+// 		throw new Error("Не число")
+// 	}
+// 	return a+b
+// }
+// try {
+// 		const result = sum("string", 3)
+// 		console.log(result);
+// 	} catch(error) {
+// 		console.log(error)
+// 	}
+
+
+// console.log(sum(2,3));
+
+// function arifm(a) {
+// 	if(a.length === 0){
+// 		throw new Error("Array is null")
+// 	}
+// 	return a.reduce((acc,item) => acc+item)/a.length
+// }
+
+// console.log(arifm([2,3,4,5,6]));
+
+
+// function sum2(a){
+// 	if(a.x === undefined || a.y === undefined){
+// 		throw new Error("Нет нужных свойств")
+// 	}
+// 	return a.x + a.y
+// }
+
+// console.log(sum2({x: 2, y: 25}));
+
+// function string(a) {
+// 	if(typeof a !== "string"){
+// 		throw new Error("Ошибка, это не строка")
+// 	}
+// 	return a.length
+// }
+
+// try{
+// 	const res = string(23)
+// 	console.log(res);
+// } catch (error){
+// 	console.log(error);
+// }
+
+// console.log(string("I'm working right now"));
+
+// const factorial = (a) => {
+// 	if(a < 0 || a %1  !== 0){
+// 		throw new Error("Ошибка, число не подходит")
+// 	}
+// 	return a ? a * factorial(a-1) : 1
+// }
+
+// console.log(factorial(10));
