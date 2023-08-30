@@ -139,3 +139,132 @@
 
 // const f5 = (a) => [...new Set(a)]
 // console.log(f5([2,2,3,4,5,3,1]));
+
+//====================== JSON =======================
+
+// const json1 = (a) => {
+// 	return Object.entries(JSON.parse(a)).length
+// }
+
+// console.log(json1('{"name": "Igor", "age": 23}'));
+
+// const obj = [
+//   { name: "Pasha", age: 25 },
+//   { name: "Sasha", age: 30 },
+//   { name: "Masha", age: 27 }
+// ];
+
+// const json = JSON.stringify(obj)
+
+// const func = (json) => {
+// 		let res = []
+// 		for(let key of JSON.parse(json)){
+// 			res.push(key.name)
+// 		}
+// 		return res
+// }
+
+// console.log(func(json)); // ["Pasha", "Sasha", "Masha"]
+
+// const temp = {
+// 	Monday: "25 C",
+// 	Tuesday: " 26 C",
+// 	Wednesday: "22 C",
+// 	Thirsday: "23 C",
+// 	Friday: "20 C"
+// }
+// const vlag = {
+// 	Monday: "64%",
+// 	Tuesday: "58%",
+// 	Wednesday: "72%",
+// 	Thirsday: "67%",
+// 	Friday: "54%"
+// }
+
+// const speed = {
+// 	Monday: "2.3 m/s",
+// 	Tuesday: "4.2 m/s",
+// 	Wednesday: "3.4 m/s",
+// 	Thirsday: "2.3 m/s",
+// 	Friday: "4.3 m/s"
+// }
+
+// const weather = {day: {
+// 	Monday: {
+// 		temp: `${temp.Monday}`,
+// 		vlag: `${vlag.Monday}`,
+// 		speed: `${speed.Monday}`
+// 	},
+// 	Tuesday: {
+// 		temp: `${temp.Tuesday}`,
+// 		vlag: `${vlag.Tuesday}`,
+// 		speed: `${speed.Tuesday}`
+// 	},
+// 	Wednesday: {
+// 		temp: `${temp.Wednesday}`,
+// 		vlag: `${vlag.Wednesday}`,
+// 		speed: `${speed.Wednesday}`
+// 	},
+// 	Thirsday: {
+// 		temp: `${temp.Thirsday}`,
+// 		vlag: `${vlag.Thirsday}`,
+// 		speed: `${speed.Thirsday}`
+// 	},
+// 	Friday: {
+// 		temp: `${temp.Friday}`,
+// 		vlag: `${vlag.Friday}`,
+// 		speed: `${speed.Friday}`
+// 	},
+// }}
+
+// console.log(weather);
+
+
+// const obj = [
+//   { name: "Pasha", followers: 777 },
+//   { name: "Sasha", followers: 1085 },
+//   { name: "Masha", followers: 11435 },
+//   { name: "Kasha", followers: 3 }
+// ];
+
+// const json = JSON.stringify(obj)
+
+// const func = (json) => {
+// 	const res = []
+// 	for(let key of JSON.parse(json)){
+// 		if(key.followers > 1000){
+// 			res.push(key.name)
+// 		}
+// 	}
+// 	return res
+// }
+
+// console.log(func(json)); // ["Sasha", "Masha"]
+
+
+// const obj = [
+//   { name: "Pasha", followers: 5777 },
+//   { name: "Sasha", followers: 6085 },
+//   { name: "Masha", followers: 16435 },
+//   { name: "Kasha", followers: 5003 }
+// ];
+
+// const json = JSON.stringify(obj);
+
+// const func = (json) => {
+// 	let res = []
+// 	for(let key of JSON.parse(json)){
+// 		res.push({name: `${key.name}`, followers: `${key.followers+5000}`})
+// 	}
+// 	return res
+// }
+
+// console.log(func(json)); 
+
+// Вывод:
+// [
+//   { name: "Pasha", followers: 5777 },
+//   { name: "Sasha", followers: 6085 },
+//   { name: "Masha", followers: 16435 },
+//   { name: "Kasha", followers: 5003 }
+// ]
