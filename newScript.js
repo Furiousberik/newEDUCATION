@@ -257,7 +257,7 @@
 // 		res.push({name: `${key.name}`, followers: `${key.followers+5000}`})
 // 	}
 // 	return res
-// }
+// }!
 
 // console.log(func(json)); 
 
