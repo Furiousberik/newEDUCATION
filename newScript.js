@@ -330,3 +330,25 @@
 // }
 
 // console.log(factorial(10));
+
+Object.prototype.newMap = function(callBack, thisArg) {
+	const res = []
+	for(let i = 0; i < this.length; i++){
+		res[i] = callBack(this[i], i, this, thisArg)
+	}
+	return res
+}
+
+console.log([1,2,3].newMap(item => item*2));
+
+Object.prototype.myFilter = function(callBack, thisArg){
+	const res = []
+	for(let i = 0;i<=this.length;i++){
+		if(callBack.call(thisArg, this[i],i, this)){
+			res.push(this[i])
+		}
+	}
+	return res
+}
+
+console.log([1,3,4,4,5,5].myFilter((ite, index)=> index >1));
