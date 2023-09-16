@@ -331,24 +331,125 @@
 
 // console.log(factorial(10));
 
-Object.prototype.newMap = function(callBack, thisArg) {
-	const res = []
-	for(let i = 0; i < this.length; i++){
-		res[i] = callBack(this[i], i, this, thisArg)
-	}
-	return res
-}
+// Object.prototype.newMap = function(callBack, thisArg) {
+// 	const res = []
+// 	for(let i = 0; i < this.length; i++){
+// 		res[i] = callBack(this[i], i, this, thisArg)
+// 	}
+// 	return res
+// }
 
-console.log([1,2,3].newMap(item => item*2));
+// console.log([1,2,3].newMap(item => item*2));
 
-Object.prototype.myFilter = function(callBack, thisArg){
-	const res = []
-	for(let i = 0;i<=this.length;i++){
-		if(callBack.call(thisArg, this[i],i, this)){
-			res.push(this[i])
-		}
-	}
-	return res
-}
+// Object.prototype.myFilter = function(callBack, thisArg){
+// 	const res = []
+// 	for(let i = 0;i<=this.length;i++){
+// 		if(callBack.call(thisArg, this[i],i, this)){
+// 			res.push(this[i])
+// 		}
+// 	}
+// 	return res
+// }
 
-console.log([1,3,4,4,5,5].myFilter((ite, index)=> index >1));
+// console.log([1,3,4,4,5,5].myFilter((ite, index)=> index >1));
+
+//=====================call, bind, apply=======================
+
+// Создай объект person с свойством name и методом greet, который выводит в консоль строку "Hello, my name is {name}". 
+// Используй this внутри метода greet для получения значения свойства name объекта person.
+
+// const person = {
+// 	name: "Igor",
+// 	greet(){
+// 		return "Hello, my name is " + this.name
+// 	}
+// }
+// console.log(person.greet());
+
+// Создай объект calculator с методами add, subtract, multiply и divide, которые выполняют соответствующие операции над двумя аргументами и возвращают результат. 
+// Добавь свойство result, которое будет хранить текущий результат вычислений. Используй this для доступа к свойству result внутри каждого метода.
+
+// const calculator = {
+// 	result: 0,
+// 	add(a,b){
+// 		this.result = a+b
+// 		return this.result
+// 	},
+// 	subtract(a,b){
+// 		this.result = a-b
+// 		return this.result
+// 	},
+// 	multiply(a,b){
+// 		this.result = a*b
+// 		return this.result
+// 	},
+// 	divide(a,b){
+// 		this.result = a/b
+// 		return this.result
+// 	}
+// }
+
+// console.log(calculator.divide(120,5))
+
+// Создай объект game с методом play, который выводит в консоль "Playing {title} game". 
+// Используй метод call или apply, чтобы вызвать метод play с объектами basketballGame и chessGame, имеющими свойства title, которые представляют соответствующие игры.
+
+// const game ={
+// 	play(){
+// 		return `Playing ${this.title} game`
+// 	}
+// }
+// const basketballGame = {
+// 	title: "basketball"
+// }
+// const chessGame = {
+// 	title: "chessGame"
+// }
+
+// console.log(game.play.apply(basketballGame));
+
+// Необходимо создать объект calculator с двумя числовыми свойствами: а и b. Инициализировать значениями по умолчанию.
+// Так же нужно создать функцию calculate, которая принимает один аргумент operation (пример “add”, “subtract“, “multiply“ или “divide“). 
+// Функция должна выполнять математические операции на числах а и b в зависимости от значения аргумента operation.
+
+// const calculator = {
+// 	add(a,b){
+// 		return a+b
+// 	},
+// 	subtract(a,b){
+// 		return a-b
+// 	},
+// 	multiply(a,b){
+// 		return a*b
+// 	},
+// 	divide(a,b){
+// 		return a/b
+// 	}
+// }
+// function calculate(operation,a,b){
+// 	return operation.call(calculator,a, b)
+// }
+// console.log(calculate(calculator.add,2,2));
+
+// Cоздай объект dog со свойством petName и методом bark. Метод bark должен возвращать строку, состоящую из значения petName и звука "Woof!". 
+// Cоздать объект cat со свойством petName и методом meow. Метод meow должен возвращать строку, состоящую из значения petName и звука "Meow!". 
+// Используя метод call, вызвать методы meow и bark с разными контекстами:
+// Вызвать метод meow с контекстом объекта dog с помощью. Результат должен быть строкой, соответствующей звуку кошки с именем собаки.
+// Вызвать метод bark с контекстом объекта cat с помощью. Результат должен быть строкой, соответствующей звуку собаки с именем кошки.
+// const dog = {
+// 	petName(){
+// 		return "barsik"
+// 	},
+// 	bark(){
+// 		return "Woof!"
+// 	}
+// }
+// const cat = {
+// 	petName(){
+// 		return "liza"
+// 	},
+// 	meow(){
+// 		return "Meow!"
+// 	}
+// }
+// console.log(cat.meow.call())

@@ -38,4 +38,33 @@
 // 					.map((item)=>	item.split("").reduce((acc,item)=>acc + ('abcdefghijklmnopqrstuvwxyz'.indexOf(item.toLowerCase())+1),0)))
 // 					))
 // }
-// console.log(high("I love my mother"));
+// console.log(high("I love my mother"))
+
+// const b = (a,b,c) => a*b*c
+
+// function curry(fn){
+// 	return function carried(...newArgs) {
+// 		if(newArgs.length >= fn.length){
+// 			return fn.apply(this, args)
+// 		}
+// 		else{
+// 			return carried.bind(this, ...args)
+// 		}
+// 	}
+// }
+
+
+// console.log(curry(b));
+
+const a = {
+	name: "Igor",
+	sayHello(){
+		return this
+	}
+}
+
+function b(){
+	console.log(this);
+}
+
+b()
