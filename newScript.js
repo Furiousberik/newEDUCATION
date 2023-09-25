@@ -453,3 +453,139 @@
 // 	}
 // }
 // console.log(cat.meow.call())
+
+
+// ===========================CLASS==========================
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   sayHello() {
+//     console.log(`Привет, меня зовут ${this.name} и мне ${this.age} лет.`);
+//   }
+// }
+
+// const b = new Person("igor",23)
+// b.sayHello()
+
+// class Person {
+//   #name;
+//   constructor(name) {
+//     this.#name = name;
+//   }
+//   getName() {
+//     return this.#name;
+//   }
+//   setName(name) {
+//     this.#name = name;
+//   }
+// }
+// const person = new Person("Pavel");
+// console.log(person.getName()); // "Pavel"
+// person.setName("Alina");
+// console.log(person.getName()); // "Alina"
+// console.log(person.#name); // SyntaxError: Private field '#name' must be declared in an enclosing class
+
+// Создай класс Rectangle с двумя свойствами: width и heigh и метод getArea(), который будет возвращать площадь прямоугольника.
+
+// class Rectangle {
+// 	constructor(width,height){
+// 		this.width = width;
+// 		this.height = height;
+// 	}
+
+// 	getArea(){
+// 		return this.width * this.height
+// 	}
+// }
+
+// const q = new Rectangle(23,3)
+
+// console.log(q.getArea());
+// Создай класс Square, который наследует свойства и методы класса Rectangle и имеет дополнительное свойство sideLength. 
+// Переопредели метод getArea() так, чтобы он возвращал площадь квадрата.
+
+// class Square extends Rectangle {
+// 	constructor(sideLength, width){
+// 		super(width)
+// 		this.sideLength = sideLength
+// 	}
+// 	getArea(){
+// 		return this.sideLength**2
+// 	}
+// }
+
+// const w = new Square(20)
+
+// console.log(w.getArea());
+// Создай класс Teacher с свойствами name и ratings , а так же методом gradeStudent(grade), который будет добавлять оценку grade в массив оценок студента ratings.
+
+// class Teacher {
+// 	constructor(name, ratings = []){
+// 		this.name = name;
+// 		this.ratings = ratings
+// 	}
+// 	gradeStudent(grade){
+// 		this.ratings.push(grade)
+// 		console.log(this.name +  " ----- " + this.ratings)
+// 	}
+// }
+
+// const e = new Teacher("Igor")
+
+// e.gradeStudent(10)
+// e.gradeStudent(2)
+
+// Создай класс BankAccount с двумя свойствами: balance и ownerName. Добавь методы deposit(amount) и withdraw(amount), 
+// которые будут добавлять и снимать сумму amount со счета соответственно. Добавь метод getBalance(), который будет возвращать текущий баланс счета.
+
+// class BankAccount {
+// 	constructor(balance , ownerName){
+// 		this.balance = balance;
+// 		this.ownerName =ownerName;
+// 	}
+// 	deposit(amount){
+// 		this.balance += amount
+// 	}
+// 	withdraw(amount){
+// 		this.balance -= amount
+// 	}
+// 	getBalance(){
+// 		return this.balance +` (${this.ownerName})`
+// 	}
+// }
+
+// const r = new BankAccount(2500, "Redev")
+
+// r.deposit(1500)
+// r.withdraw(550)
+// console.log(r.getBalance());
+
+// Создай класс Product с двумя свойствами: name и price. Добавь метод priceWithTax, который будет возвращать цену товара с учетом налога на продажи в размере 10%. 
+// Процентную ставку нужно хранить в приватном свойстве.
+
+// class Product{
+// 	#allPrice;
+// 	constructor(name, price, allPrice){
+// 		this.name = name;
+// 		this.price = price;
+// 		this.#allPrice = allPrice
+// 	}
+// 	priceWithTax(){
+// 		this.#allPrice = Math.round(this.price + this.price * 0.1)
+// 		return `allPrice of ${this.name} = ${this.#allPrice}$`
+// 	}
+// 	setAllPrice(allPrice){
+// 		this.#allPrice = allPrice
+// 	}
+// 	getAllPrice(){
+// 		return this.#allPrice
+// 	}
+// }
+
+// const t = new Product("VacuumCleaner", 2500)
+
+// console.log(t.priceWithTax());
+// console.log(t.getAllPrice())

@@ -56,15 +56,61 @@
 
 // console.log(curry(b));
 
-const a = {
-	name: "Igor",
-	sayHello(){
-		return this
+// const b = [1,2,3,4]
+
+// const [,,a = 1] = b
+
+// const now = new Date()
+// now.setDate(now.getDate()-2)
+// now.setHours(now.getHours()-2)
+// console.log(now);
+
+
+// const c = {
+// 	name: "Igor",
+// 	age: 23
+// }
+// console.log(JSON.stringify(c, ["name"]));
+
+function z(a) {
+	return function v(b){
+		return a+b
 	}
 }
 
-function b(){
-	console.log(this);
+// console.log(z(2)(3))
+
+function rec(n){
+	return n ? n*rec(n-1) : 1
 }
 
-b()
+// console.log(rec(5));
+
+// const car = (a,b,c) => {
+// 	return a*b*c
+// }
+
+// function curry(fn){
+// 	return function carried(...args){
+// 		if(args.length>=fn.length){
+// 			return fn.call(this, ...args)
+// 		}
+// 		else {
+// 			return carried.bind(this, ...args)
+// 		}
+// 	}
+// }
+
+// const curryCar = curry(car)
+
+// console.log(curryCar(3,4));
+
+
+
+// Call//Bind//Apply
+function Person(name,age){
+	this.name = name
+	this.age = age
+}
+
+const b = new Person("Igor", 23)
