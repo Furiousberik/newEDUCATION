@@ -589,3 +589,69 @@
 
 // console.log(t.priceWithTax());
 // console.log(t.getAllPrice())
+
+// Дополнительное задание для монстров программирования! 
+// Дополнительное задание для монстров программирования! 
+// 1) Написать валидацию для каждого свойства.
+// - name. Только латиница. Не меньше 2-х символов и не больше 15-ти включительно;
+// - age. Только цифры. От 18 до 65 включительно;
+// - isMan. Boolean. true || false;
+// - reatedDate. Дата создания студента. Формат(dd/mm/yyyy);
+// 2) Информацию по допустимому возрасту и доступным полам хранить в приватных свойствах.
+// #validAge = {min: 18, max:65}
+// 3) Написать метод showInfo, который вернет всю информацию экземпляра класса.
+// (имя, возраст, пол в виде male||female, дату создания в формате (dd-mm-yyyy))
+// 4) Исходные данные для создания студентов хранить в JSON (минимум 5 студентов из них 3 не валидных). То есть к примеру массив объектов.
+// const JSON = "[{name: 'pasha',...},{}, {}]";
+// 5) По необходимости использовать деструктуризацию и оператор spread, где это необходимо.
+
+class ValidatePerson {
+	constructor(name,age,isMan, reatedDate){
+		this.name = name;
+		this.age = age;
+		this.isMan = isMan;
+		this.reatedDate = reatedDate;
+	}
+	get name(){
+		return this._name
+	}
+	set name(value){
+		if(value.length < 2 || value.length > 15){
+			console.log("Не правильно, длина должна быть не меньше 2 и не больше 15 символов");
+			} 
+		this._name = value
+	}
+	get age(){
+		return this._age
+	}
+	set age(value){
+		if(value < 18 || value > 65){
+			return "Тыыы. Ннне пройдееешь!";
+		}
+		this._age = value
+	}
+	get isMan() {
+		return this._isMan
+	}
+	set isMan(value){
+		this._isMan = value
+		if(value === "male"){
+			return true
+		}
+		else{
+			return false
+		}
+	}
+	get reatedDate(){
+		return this._reatedDate
+	}
+	set reatedDate(value){
+		this._reatedDate = value
+		return value
+	}
+	
+}
+
+const val = new ValidatePerson("Igor", 23, "male", "11/11/1999")
+
+console.log(val.reatedDate)
