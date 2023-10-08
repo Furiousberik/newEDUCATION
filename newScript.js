@@ -605,66 +605,66 @@
 // const JSON = "[{name: 'pasha',...},{}, {}]";
 // 5) По необходимости использовать деструктуризацию и оператор spread, где это необходимо.
 
-class ValidateStudents {
-	#validAge = {"min": 18, "max": 65};
-	#validIsMan = ["male", "female"];
-	constructor(name,age,isMan, createdDate, validAge, validIsMan){
-		this.name = name;
-		this.age = age;
-		this.isMan = isMan;
-		this.createdDate = createdDate;
-		this.#validAge = validAge;
-		this.#validIsMan = validIsMan;
-	}
-		set name(value){
-			this._name = value
-		if(value.length < 2 || value.length > 15){
-			console.log("Неправильно, длина должна быть не меньше 2 и не больше 15 символов");
-			} 
-	}
-	set age(value){
-				if(value < this.#validAge.min || value > this.#validAge.max){
-			console.log("Тыыы. Ннне пройдееешь!"); 
-		}
-		this._age = value
-	}
-	set isMan(value){
-		this._isMan = value
-		if(value === this.#validIsMan[0]){
-			return true
-		}
-		else if(value === this.#validIsMan[1]){
-			return false
-		}
-		else {
-			console.log("Что ты такое?")
-		}
-	}
-	set createdDate(value){
-		this._createdDate = value
-		const [,,a,,,b] = value
-		if(a !== "/" || b !== "/"){
-				console.log("Ошибка, введите дату в формате dd/mm/yyyy");
-		}
-	}
-	get name(){
-		return this._name
-	}
-	get age(){
-		return this._age
-	}
-	get isMan() {
-		return this._isMan
-	}
-	get createdDate(){
-		return this._createdDate
-	}
-	showInfo(){
-		const [,,t,,,y, ...rest] = this.createdDate
-		return [this.name, this.age, this.isMan]
-	}
-}
+// class ValidateStudents {
+// 	#validAge = {"min": 18, "max": 65};
+// 	#validIsMan = ["male", "female"];
+// 	constructor(name,age,isMan, createdDate, validAge, validIsMan){
+// 		this.name = name;
+// 		this.age = age;
+// 		this.isMan = isMan;
+// 		this.createdDate = createdDate;
+// 		this.#validAge = validAge;
+// 		this.#validIsMan = validIsMan;
+// 	}
+// 		set name(value){
+// 			this._name = value
+// 		if(value.length < 2 || value.length > 15){
+// 			console.log("Неправильно, длина должна быть не меньше 2 и не больше 15 символов");
+// 			} 
+// 	}
+// 	set age(value){
+// 				if(value < this.#validAge.min || value > this.#validAge.max){
+// 			console.log("Тыыы. Ннне пройдееешь!"); 
+// 		}
+// 		this._age = value
+// 	}
+// 	set isMan(value){
+// 		this._isMan = value
+// 		if(value === this.#validIsMan[0]){
+// 			return true
+// 		}
+// 		else if(value === this.#validIsMan[1]){
+// 			return false
+// 		}
+// 		else {
+// 			console.log("Что ты такое?")
+// 		}
+// 	}
+// 	set createdDate(value){
+// 		this._createdDate = value
+// 		const [,,a,,,b] = value
+// 		if(a !== "/" || b !== "/"){
+// 				console.log("Ошибка, введите дату в формате dd/mm/yyyy");
+// 		}
+// 	}
+// 	get name(){
+// 		return this._name
+// 	}
+// 	get age(){
+// 		return this._age
+// 	}
+// 	get isMan() {
+// 		return this._isMan
+// 	}
+// 	get createdDate(){
+// 		return this._createdDate
+// 	}
+// 	showInfo(){
+// 		const [,,t,,,y, ...rest] = this.createdDate
+// 		return [this.name, this.age, this.isMan]
+// 	}
+// }
 
-const val = new ValidateStudents("Igor", 23, "male", "11/11/1999")
+// const val = new ValidateStudents("Igor", 23, "male", "11/11/1999")
 
-console.log(val.showInfo())
+// console.log(val.showInfo())
