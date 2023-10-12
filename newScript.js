@@ -604,18 +604,23 @@
 // 4) Исходные данные для создания студентов хранить в JSON (минимум 5 студентов из них 3 не валидных). То есть к примеру массив объектов.
 // const JSON = "[{name: 'pasha',...},{}, {}]";
 // 5) По необходимости использовать деструктуризацию и оператор spread, где это необходимо.
+const JSON = [{name: "Igor", age: 23, isMan: "Man", createdDate: "11/11/1999"},
+						  {name: "Lera", age: 23, isMan: "Woman", createdDate: "02/12/1999"},
+ 							{name: "M", age: 25, isMan: "Man", createdDate: "11/11/1999"},
+						  {name: "Andrew", age: 66, isMan: "Man", createdDate: "11/11/1999"}, 
+							{name: "Misha", age: 23, isMan: "Man", createdDate: "11a1131999"}]
 
 class validateStudents {
 	#validAge = {"min": 18, "max":65}
 	#validIsMan = ["Man", "Woman"]
-	constructor(name, age, isMan, createdDate){
-		this.name = name;
-		this.age = age;
-		this.isMan = isMan;
-		this.createdDate = createdDate;
+	constructor(json){
+		this.name = json.name;
+		this.age = json.age;
+		this.isMan = json.isMan;
+		this.createdDate = json.createdDate;
 	}
 	showInfo(){
-		const a = this._isMan.split().map(item=>item = "Man" ? item = "Male" : item = "Female").join()
+		const a = this._isMan.split().map(item=>item === this.#validIsMan[0]? item = "Male" : item === this.#validIsMan[1] ? item = "Female" : "Что ты nакое").join()
 		const b = this._createdDate.split("/").join("-")
 		console.log(this._name, this._age, a, b);
 	}
@@ -626,20 +631,19 @@ class validateStudents {
 		this._name = value
 	}
 	set age(value){
+		
 		if(value >= this.#validAge.min && this.#validAge.max <= 65){
-			console.log("Заходи, брат");
+			 this._age = value
 		}
-		else console.log("Уходи");
-		this._age = value
+		return
+		
 	}
 	set isMan(value){
 		this._isMan = value
-		if(value === this.#validIsMan[0]){
+		if(value === this.#validIsMan[0] || value === this.#validIsMan[1]){
 			return true
 		}
-		else if (value === this.#validIsMan[1]){
-			return false
-		}
+		else	return false
 	}
 	set createdDate(value){
 		this._createdDate = value
@@ -662,7 +666,16 @@ class validateStudents {
 	}
 }
 
-const firstStudent = new validateStudents("Igor", 23, "Man", "11/11/1999")
+const firstStudent = new validateStudents(JSON[0])
+const secondStudent = new validateStudents(JSON[1])
+const thirdStudent = new validateStudents(JSON[2])
+const fourthStudent = new validateStudents(JSON[3])
+const fifthStudent = new validateStudents(JSON[4])
+
 
 firstStudent.showInfo()
+secondStudent.showInfo()
+thirdStudent.showInfo()
+fourthStudent.showInfo()
+fifthStudent.showInfo()
 
