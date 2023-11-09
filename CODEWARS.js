@@ -82,3 +82,40 @@
 
 // console.log(isPerfect(28));
 
+// Массивы и строки I
+// 13. list-filtering
+// function filter_list(l) {
+// 	return l.filter(item => typeof item === "number")	
+// }
+// console.log(filter_list([1,2,'aasf','1','123',123]));
+// 14.shortest-word
+// function findShort(s){
+// 	return s.split(" ").sort((a,b)=>a.length - b.length)[0].length
+// }
+// console.log(findShort("Ad ew wer werty q qwe reqrt"));
+// 15.sum-of-positive
+// function positiveSum(arr) {
+// 	return arr.filter(item => item >= 0).reduce((acc, item)=>acc+item, 0)
+// }
+// console.log(positiveSum([0]));
+// 16.Build a square
+// function generateShape(integer){
+// 	return `${"+".repeat(integer)}\n`.repeat(integer).trim()
+// }
+// console.log(generateShape(23));
+// 17.Vowel Count
+// function getCount(str) {
+//   return str.split("").filter(item => "aeiou".includes(item)).length
+// }
+// console.log(getCount("abracadabra"));
+// 18.playing-with-digits
+// function digPow(n, p){
+// 	let res = String(n).split("").reduce((acc,item,index) => acc + Math.pow(item, p + index), 0)
+// 	return res % n ? -1 : res/n
+// }
+// console.log(digPow(46288, 3));
+// 19.Smallest value of an array
+function min(arr, toReturn) {
+	return toReturn === "value" ? arr.sort((a,b)=> a-b)[0] : arr.sort((a,b)=> a-b)
+}
+console.log(min([23,4,13,3,5], "w"));
