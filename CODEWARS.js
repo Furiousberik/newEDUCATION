@@ -115,7 +115,34 @@
 // }
 // console.log(digPow(46288, 3));
 // 19.Smallest value of an array
-function min(arr, toReturn) {
-	return toReturn === "value" ? arr.sort((a,b)=> a-b)[0] : arr.sort((a,b)=> a-b)
-}
-console.log(min([23,4,13,3,5], "w"));
+// function min(arr, toReturn) {
+// 	return toReturn === "value" ? Math.min(...arr) : toReturn === "index" ? arr.indexOf(Math.min(...arr)) : -1
+// }
+// console.log(min([23,4,13,10,5], "value"));
+// 20. array-dot-diff
+// function arrayDiff(a, b) {
+//   return a.filter(item=>!b.includes(item))
+// }
+// console.log(arrayDiff([1,2,2,2,3],[2]));
+// 21.find-the-capitals-1
+// var capitals = function (word) {
+// 	return word.split("").map((item,index)=> item == item.toUpperCase() ? index : false).filter(item => item !== false)
+// };
+// console.log(capitals("CodEWaRs" ));
+// 22.insert-dashes
+// function insertDash(num) {
+// 	return num.toString().split("").map((item,index,arr) => arr[index]%2 === 1 && arr[index+1]%2===1 ? item+"-" : item).join("")
+// }
+// console.log(insertDash(454793));
+// 23.homogenous-arrays
+// function filterHomogenous(arrays) {
+//   // Alea iacta est, code legionary!
+//   return arrays.filter(item=> item.length > 0 && item.every((item,index,array) => typeof item === typeof array[array.length-1]))
+// }
+// console.log(filterHomogenous([[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]));
+// 24. lottery-ticket
+// function bingo(ticket, win){
+// 	return ticket.filter(item=> item.filter((item, index, arr) => arr[0].charCodeAt(0) === arr[1]).length > 0).length >= win ? "Winner!" : "Loser!"
+// }
+// console.log(bingo([['ABC', 65], ['BYHT', 74]], 2));
+// 25.
