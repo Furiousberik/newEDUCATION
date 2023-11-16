@@ -145,4 +145,67 @@
 // 	return ticket.filter(item=> item.filter((item, index, arr) => arr[0].charCodeAt(0) === arr[1]).length > 0).length >= win ? "Winner!" : "Loser!"
 // }
 // console.log(bingo([['ABC', 65], ['BYHT', 74]], 2));
-// 25.
+// 25.row-weights
+// function rowWeights(array){
+//   return [array.filter((item,index)=> index%2 === 0).reduce((acc,item)=> acc+item, 0), array.filter((item,index)=> index%2 !== 0).reduce((acc,item)=> acc+item, 0)]
+// }
+// console.log(rowWeights([2,3,123]));
+// 26.  scrolling-text
+// function scrollingText(text){
+//   let result = []
+  
+//   for( var i = 0; i < text.length; i++){
+//     result.push((text.slice(i) + text.slice(0,i)).toUpperCase())
+//   }
+//   return result
+// }
+// console.log(scrollingText("codewars"));
+// 27.Write Number in Expanded Form
+// function expandedForm(num) {
+// 	return num.toString().split("").reverse().map( (a, i) => a * Math.pow(10, i)).filter(a => a > 0).reverse().join(" + ");
+// }
+// console.log(expandedForm(70504));
+// 28.is-every-value-in-the-array-an-array
+// const arrCheck = value => value.every(item=> Array.isArray(item))
+// console.log(arrCheck([[1],"2"]));
+// 29.	make-a-square-box
+// function box(n) {
+//   const outB = '-'.repeat(n);
+//   const inB = `-${' '.repeat(n-2)}-`;
+
+//   return [outB, ...Array(n-1).fill(inB), outB];
+// }
+// console.log(box(4));
+// 30.magic-index
+// function findMagic(arr){
+// 	return Number(arr.filter((item, index)=> item === index).join("")) || -1
+// }
+// console.log(findMagic([-20,-10,2,10,20]));
+// 31. Email Address Obfuscator
+// const obfuscate = function(email) {
+//   return email.replaceAll("."," [dot] ").replaceAll("@", " [at] ")
+// }
+// console.log(obfuscate("borisenko.igor2017@mail.ru"));
+// 32. Check the exam
+// function checkExam(array1, array2) {
+// 	let x = array1.map((item,index)=>array2[index].includes(item)  ? 4 : array2[index] === "" ? 0 : -1).reduce((acc,item)=>acc+item, 0) 
+// 	return x < 0 ? 0 : x
+// }
+// console.log(checkExam(["a", "a", "b", "b"], ["d", "c", "", "d"]));
+// 33. Count the smiley faces
+// function countSmileys(arr) {
+// 	let count = 0
+// 	let validSmileys = [":D", ";D", ":)", ";)", ":-D", ";-D", ":-)", ";-)", ":~D", ";~D", ":~)", ";~)"];
+// 	for(let i =0; i<arr.length;i++){
+// 		if(validSmileys.includes(arr[i])){
+// 			count++
+// 		}
+// 	}
+// 	return count
+// }
+// console.log(countSmileys([';D', ':-(', ':-)', ';~)']));
+// 34. Small enough?
+// function smallEnough(a, limit){
+// 	return a.every(item=>item<=limit)
+// }
+// console.log(smallEnough([20,31,5], 20));
